@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // Reading a file
 
@@ -21,21 +21,29 @@ const fs = require('fs');
 
 // Creating directories
 
-if (!fs.existsSync('./assets')) {
-    fs.mkdir('./assets', (err) => {
-        if (err) {
-            console.log(err)
-        }
-        console.log("directory created");
-    })
-} else {
-    fs.rmdir('./assets', (err) => {
-        if (err) {
-            console.log(err);
-        }
-        console.log("Directory removed sussesfully");
-    })
+// if (!fs.existsSync('./assets')) {
+//     fs.mkdir('./assets', (err) => {
+//         if (err) {
+//             console.log(err)
+//         }
+//         console.log("directory created");
+//     })
+// } else {
+//     fs.rmdir('./assets', (err) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log("Directory removed sussesfully");
+//     })
+// }
+
+// Deleting files
+
+if (fs.existsSync("./docs/deleteme.txt")) {
+  fs.unlink("./docs/deleteme.txt", (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log("File deleted");
+  });
 }
-
-
-
